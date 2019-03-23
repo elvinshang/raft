@@ -1,4 +1,4 @@
-go-raft [![Build Status](https://drone.io/github.com/goraft/raft/status.png)](https://drone.io/github.com/goraft/raft/latest) [![Coverage Status](https://coveralls.io/repos/goraft/raft/badge.png?branch=master)](https://coveralls.io/r/goraft/raft?branch=master)
+go-raft [![Build Status](https://drone.io/github.com/elvinshang/raft/status.png)](https://drone.io/github.com/elvinshang/raft/latest) [![Coverage Status](https://coveralls.io/repos/goraft/raft/badge.png?branch=master)](https://coveralls.io/r/goraft/raft?branch=master)
 =======
 
 ## Overview
@@ -24,7 +24,7 @@ If you have any questions on implementing go-raft in your project please file an
 There is an [active community][community] of developers who can help.
 go-raft is under the MIT license.
 
-[community]: https://github.com/goraft/raft/contributors
+[community]: https://github.com/elvinshang/raft/contributors
 
 ### Features
 
@@ -41,7 +41,7 @@ go-raft is under the MIT license.
 These projects are built on go-raft:
 
 
-- [goraft/raftd](https://github.com/goraft/raftd) - A reference implementation for using the go-raft library for distributed consensus.
+- [goraft/raftd](https://github.com/elvinshang/raftd) - A reference implementation for using the go-raft library for distributed consensus.
 - [Weed File System](https://weed-fs.googlecode.com) - A scalable distributed key-to-file system with O(1) disk access for each read.
 - [rqlite](https://github.com/otoolep/rqlite) - A replicated SQLite database, distributing the database replicas across multiple nodes.
 
