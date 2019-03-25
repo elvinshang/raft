@@ -593,8 +593,8 @@ func (l *Log) compact(index uint64, term uint64) error {
 	}
 
 	// create a new log file and add all the entries
-	new_file_path := l.path + ".new"
-	file, err := os.OpenFile(new_file_path, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0600)
+	newFilePath := l.path + ".new"
+	file, err := os.OpenFile(newFilePath, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0600)
 	if err != nil {
 		return err
 	}
@@ -604,25 +604,25 @@ func (l *Log) compact(index uint64, term uint64) error {
 
 		if _, err = entry.Encode(file); err != nil {
 			file.Close()
-			os.Remove(new_file_path)
+			os.Remove(newFilePath)
 			return err
 		}
 	}
 	file.Sync()
 
-	old_file := l.file
+	oldFile := l.file
 
 	// rename the new log file
-	err = os.Rename(new_file_path, l.path)
+	err = os.Rename(newFilePath, l.path)
 	if err != nil {
 		file.Close()
-		os.Remove(new_file_path)
+		os.Remove(newFilePath)
 		return err
 	}
 	l.file = file
 
 	// close the old log file
-	old_file.Close()
+	oldFile.Close()
 
 	// compaction the in memory log
 	l.entries = entries
