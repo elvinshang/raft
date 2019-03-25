@@ -599,6 +599,7 @@ func (l *Log) compact(index uint64, term uint64) error {
 		return err
 	}
 	for _, entry := range entries {
+		//TODO:l.file may be file
 		position, _ := l.file.Seek(0, os.SEEK_CUR)
 		entry.Position = position
 
